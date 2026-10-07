@@ -1,0 +1,56 @@
+CLAUDE SECURITY SKILLS
+Stand: 07.10.2026
+
+Das Paket enthält alle 15 Skills aus dem verlinkten OpenAI-Repository,
+angepasst für Claude. Jeder Skill enthält seine nötigen Referenzen.
+
+CLAUDE CODE
+Die 15 Skill-Ordner unter claude-skills/ gehören in den persönlichen
+Skills-Ordner ~/.claude/skills/. Die SKILL.md muss direkt im jeweiligen
+Skill-Ordner liegen. Es ist kein Plugin- oder ZIP-Importbefehl notwendig.
+Persönliche Skills gelten für lokale Claude-Code-Sitzungen in deinen Projekten.
+Nach der Installation eine neue Claude-Code-Sitzung öffnen. /skills zeigt die
+Skills. Aufruf zum Beispiel:
+
+  /security-scan Prüfe dieses Repository auf Sicherheitslücken.
+  /security-diff-scan Prüfe die aktuellen Änderungen auf Sicherheitslücken.
+  /threat-model Erstelle ein Threat Model für dieses Projekt.
+
+Eine gewünschte Prüfung wird erst durch deinen Auftrag gestartet.
+
+CLAUDE.AI
+Unter import-zips/ liegt eine separate ZIP pro Skill. Diese ZIPs einzeln in
+Customize > Skills > + > Create skill > Upload a skill hochladen.
+Das Gesamtpaket selbst ist kein einzelner importierbarer Skill.
+Code execution and file creation muss für Web-Skills aktiviert sein.
+Ein Skill-Upload macht lokale Repositories nicht automatisch zugänglich.
+
+ANPASSUNGEN UND GRENZEN
+Gemeinsame Dateien wurden in jeden Skill aufgenommen; Verweise und
+Aufrufe wurden für Claude angepasst. Codex-Serverfunktionen, native
+Scan-Datenbank, versiegelte Artefakte, automatischer SARIF-Export,
+Hintergrundkoordination und Tokenmessung werden nicht mitinstalliert.
+Deep Security Scan nutzt mehrere lokale Prüfdurchgänge. Geteilte Kontexte
+gelten nicht als unabhängige Validierung.
+GitHub-, Jira- und Linear-Aktionen benötigen eine passende Verbindung oder
+ein ausgewähltes CLI-Konto. Fehlt es, werden lokale Entwürfe erstellt.
+Der Patch-Risk-Validator benötigt das Python-Paket jsonschema, sofern eine
+vollständige Schemaprüfung gewünscht ist. Es wird nicht automatisch installiert.
+
+GEPRÜFT
+Namen und Metadaten aller 15 Skills, alle lokalen Referenzziele,
+fehlende Codex-Laufzeitverweise, ZIP-Struktur und Datei-Prüfsummen.
+Der hinzugefügte Validator wurde mit gültigen, ungültigen und stdin-Daten geprüft.
+Die Skills wurden hier nicht für einen echten Sicherheits-Scan in Claude
+ausgeführt. Strukturprüfungen ersetzen keine fachliche Wirksamkeitsprüfung.
+
+QUELLE UND LIZENZ
+Quelle: https://github.com/openai/codex-security/tree/main/plugins/codex-security/skills
+Commit: eb73cc0fa64f25f432bace6f8ff3f475038bfc71
+Apache-2.0; LICENSE und NOTICE liegen jedem Skill bei.
+originale/codex-security-originale.zip enthält unveränderte Originalquellen
+und dient zum Vergleich. Dieses Archiv ist kein Claude-Importpaket.
+
+Offizielle Claude-Dokumentation:
+https://code.claude.com/docs/en/skills
+https://support.claude.com/en/articles/12512180-use-skills-in-claude

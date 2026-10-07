@@ -1,0 +1,10 @@
+Derived from OpenAI codex-security.
+Original copyright: Copyright 2025 OpenAI.
+License: Apache-2.0; see LICENSE.
+Source: https://github.com/openai/codex-security/tree/main/plugins/codex-security/skills
+Pinned source commit: eb73cc0fa64f25f432bace6f8ff3f475038bfc71
+
+Modified for Claude on 2026-10-07.
+Runtime-specific Codex integration was replaced with self-contained local workflows.
+Original evidence, validation, severity, triage and reporting guidance was retained or adapted.
+This adaptation is not an official OpenAI or Anthropic integration.

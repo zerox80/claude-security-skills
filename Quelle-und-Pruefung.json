@@ -1,0 +1,122 @@
+{
+  "source": "https://github.com/openai/codex-security/tree/main/plugins/codex-security/skills",
+  "commit": "eb73cc0fa64f25f432bace6f8ff3f475038bfc71",
+  "adapted_on": "2026-10-07",
+  "format": "Claude self-contained skill folders",
+  "skills": [
+    {
+      "name": "assess-patch-risk",
+      "command": "/assess-patch-risk",
+      "description": "Assess an immutable patch artifact's program impact, regression risk, and auto-merge eligibility. Use for generated patch files, provider pull-request diffs, or commit ranges when reviewers need evidence about affected runtime paths, contracts, tests, and recoverability. This skill is read-only and does not generate, edit, apply, push, or merge the patch.",
+      "entry_sha256": "b85ef16dcd34c4f6e5b77eac9339c33319d6737f4fe8102ce0e91babed91f9b7",
+      "zip_sha256": "877a3797bec7760c8aba09a34793d7461b69231afefcf0f05f79b3d6c9ee522b"
+    },
+    {
+      "name": "attack-path-analysis",
+      "command": "/attack-path-analysis",
+      "description": "Trace supplied security findings from attacker-controlled source through controls to sensitive sinks, assess counterevidence, and calibrate severity and reportability. Use for explicit attack-path or severity analysis.",
+      "entry_sha256": "fa223b2df57af70f9b16d2aca6eb67b7b5c2ee78a7bc122cae00360cc48bd7e8",
+      "zip_sha256": "c780aff61e4e9c719c01993985d24650d1993d44b904c9100887d9508a92c831"
+    },
+    {
+      "name": "deep-security-scan",
+      "command": "/deep-security-scan",
+      "description": "Perform several source-backed audit passes over the same supplied repository or scoped paths to challenge findings and improve coverage. Use for a deep or multi-pass audit, not a PR or patch review.",
+      "entry_sha256": "93e55f1ee1969b9789ae26e20ee1a0e5ec74a9f4c6153c777a09d0a9fef9cc7f",
+      "zip_sha256": "af51f006bf9018a759c30ea85894c909d1b881b2e630768bfec518ba75611d88"
+    },
+    {
+      "name": "define-security-policy",
+      "command": "/define-security-policy",
+      "description": "Define, review or update SECURITY.md guidance for a supplied repository or component, including scope, threat boundaries, security invariants, reportability and accepted risk.",
+      "entry_sha256": "0e187cd0442f6b78adce4a05f971b4c11084d2547765acee8cb47bd3df29b66f",
+      "zip_sha256": "638580af514c53d8625e1d97212897973ed1d1fc6fd3975a4010eb84ed0642e6"
+    },
+    {
+      "name": "finding-discovery",
+      "command": "/finding-discovery",
+      "description": "Discover plausible candidate security findings in supplied source or a code change. Preserve exact instances and evidence for later validation. Use for candidate discovery, not a complete audit or final severity assessment.",
+      "entry_sha256": "c079f745e39c86848f528a1f7230849d4d206d0e1f682770b88db6562be4681e",
+      "zip_sha256": "c81d42b141c6d518274c31a99f79ad138bc6a1b4815e606148bfb64081d650ba"
+    },
+    {
+      "name": "fix-finding",
+      "command": "/fix-finding",
+      "description": "Use only when the user explicitly asks to fix and verify a validated or plausible security vulnerability. Do not use for ordinary bug fixes, correctness or design review findings, general validation, or full PR, commit, branch, patch, or repository scans.",
+      "entry_sha256": "3d8e473886a6189a2987daedca8af758c7e7bdb5eef3a2bc010d3b58f1ec1416",
+      "zip_sha256": "c9ef3adc513ce814086ebf1e6b3f86a2e329381ffa05f241ddf76ef350a2a389"
+    },
+    {
+      "name": "propose-security-hardening",
+      "command": "/propose-security-hardening",
+      "description": "Develop source-backed structural or architectural security hardening proposals from supplied findings, disclosures, incident evidence or source. Use for systemic improvements, alternatives and engineering tradeoffs; implementation requires a separate request.",
+      "entry_sha256": "3fc1a204f85728b4c02ce84627144ae92da1d95c92bec129334a090f8d7041a1",
+      "zip_sha256": "f0867945cf35d216b8c09d59da11edb7f2c56c9f3a33ca354e8fb1cbe3e1b81a"
+    },
+    {
+      "name": "security-diff-scan",
+      "command": "/security-diff-scan",
+      "description": "Review a supplied pull request, commit range, branch diff or working-tree patch for security vulnerabilities, with complete changed-file coverage and source-backed evidence.",
+      "entry_sha256": "22e4723fc91cbf5e8bd1a5064ebfbb8d01ec373c84acaf14622ea26f2ce9b88e",
+      "zip_sha256": "3fa29b376962e8407ba9e9a6c6ff2f360387273fc0412fe5eb08ea602a97b904"
+    },
+    {
+      "name": "security-scan",
+      "command": "/security-scan",
+      "description": "Perform a source-backed static security audit of a supplied repository or scoped paths. Use for a full security scan or audit; use security-diff-scan for a PR, commit or patch review.",
+      "entry_sha256": "0df4894e193dd250f2e543d65e940b0b5ee3f939363ab1ce8954e9b415528dd0",
+      "zip_sha256": "68026bea24d06f1a2bf4ee829cee527786475808692a4785e37334c92ed920ee"
+    },
+    {
+      "name": "threat-model",
+      "command": "/threat-model",
+      "description": "Create, review or update a source-backed threat model of a supplied repository or component. Use for explicit threat-model requests or a requested modeling phase, not as a substitute for a full security audit.",
+      "entry_sha256": "d68c718db8ccfd52f91b3f939b4d93daa90de20d55d9db0340c33a57cf4b61e1",
+      "zip_sha256": "0acc052458bd3e1c151674b4bf9330182060534d6c3d2c51a4e3b7746c20b2ed"
+    },
+    {
+      "name": "track-findings",
+      "command": "/track-findings",
+      "description": "Prepare reviewed tracking items or private advisory drafts for validated security findings in a selected Linear, Jira or GitHub destination. Use available connected tools or an authorized CLI for explicitly requested writes and duplicate checks.",
+      "entry_sha256": "b8810d0984dc5127375429c17b155afc6d4c5b9cb59704556f77473505b0c312",
+      "zip_sha256": "0510e8d50b977146f9ade13396e5de94758bd23c512879d2848893396e390f6d"
+    },
+    {
+      "name": "triage-finding",
+      "command": "/triage-finding",
+      "description": "Triage supplied or imported security findings against a repository using its security policy and static code evidence. Accepts scanner reports, advisories, GitHub findings, and Jira or Linear tickets. Do not use for discovery, duplicate triage, runtime validation, or fixes.",
+      "entry_sha256": "be64d857f1a11fbfd64300121ace54410c8e1595b1197f48a97e5a1aa27ee775",
+      "zip_sha256": "31b71b5e90642612c25b0e2ea58a80d98cd4692867ddc576e9c204665b8b108e"
+    },
+    {
+      "name": "validation",
+      "command": "/validation",
+      "description": "Assess whether supplied candidate security findings are valid using source evidence, counterevidence and proportionate authorized local reproduction. Use for candidate validation, not full scans or fix verification.",
+      "entry_sha256": "d8145ff9df6c5083b54e81923126c9842b91c17118454bda60b17cf758b6277b",
+      "zip_sha256": "2a4c852f80dd0779f59b568699a67acae84232337530787f30c32e46e602e139"
+    },
+    {
+      "name": "verify-fix",
+      "command": "/verify-fix",
+      "description": "Use only when the user explicitly requests verification that a security fix remediates a reported vulnerability. Do not invoke automatically while implementing fixes, reviewing ordinary code changes, or running tests. Do not use for non-security fixes, candidate finding validation, or full repository scans.",
+      "entry_sha256": "d580aa4f9dedf94cae00c0570bd109003d153939c161e0b65678ccca4cfb33ad",
+      "zip_sha256": "37faed4c632690cc319433a479248c460753285c5d9515223e3dde8a91f5afd6"
+    },
+    {
+      "name": "vulnerability-writeup",
+      "command": "/vulnerability-writeup",
+      "description": "Turn supplied vulnerability notes, disclosures, PoCs, source or scanner findings into self-contained evidence-backed vulnerability reports. Use for one finding or a disclosure collection; a native scanner is not required.",
+      "entry_sha256": "f13f6f3d466b52170d65ff58325dd40c6432afb5ee847871953b45dbdcf1145b",
+      "zip_sha256": "1262c0f060dae28b8ecfa47b3a2add0c2c4de03fcf99541db224f8f276387d77"
+    }
+  ],
+  "validation": {
+    "skill_count": 15,
+    "frontmatter": "passed",
+    "local_references": "passed",
+    "missing_codex_runtime_references": "none",
+    "patch_risk_helper": "valid, invalid, and stdin checks passed",
+    "live_claude_security_scan": "not run"
+  },
+  "original_zip_sha256": "3b8bd607627cda14800259a91c52f2d860a422bd1aa8fd7897148c2c056002ee"
+}
